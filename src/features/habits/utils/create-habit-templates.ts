@@ -1,19 +1,32 @@
-export function createHabitTemplates(columns: number, rows: number) {
-    const result = []
+import type { HabitStruct } from "../types"
+
+export function createHabitTemplates(dates: Date[]): HabitStruct[] {
+    const habits: HabitStruct[] = []
 
     const isChecked = () => {
-        return Math.random() < 0.7
+        return Math.random() > 0.4
     }
 
-    for (let c = 0; c < columns; c++) {
-        for (let r = 0; r < rows; r++) {
-            result.push({
-                column: c,
-                row: r,
-                checked: isChecked(),
-            })
+    const createHabit = (id: number, color: string) => {
+        const completions: { [key: string]: boolean } = {}
+
+        for (const date of dates) {
+            if (isChecked()) {
+                completions[date.toISOString()] = true
+            }
         }
+
+        habits.push({
+            id: id,
+            name: "Hejsan!",
+            color: color,
+            completions: completions,
+        })
     }
 
-    return result
+    createHabit(1, "#3b82f6")
+    createHabit(2, "#22c55e")
+    createHabit(3, "#facc15")
+
+    return habits
 }
