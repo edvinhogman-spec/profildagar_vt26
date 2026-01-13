@@ -1,3 +1,5 @@
 ## Externt innehåll
 
-NextJS, TailwindCSS, TypeScript
+NextJS (Ramverk)
+TailwindCSS (Ramverk)
+Biome (Linter)

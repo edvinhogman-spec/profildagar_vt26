@@ -14,12 +14,37 @@
         "indentStyle": "space",
         "indentWidth": 4
     },
+    "javascript": {
+        "formatter": {
+            "semicolons": "asNeeded"
+        }
+    },
     "linter": {
         "enabled": true,
         "rules": {
             "recommended": true,
             "suspicious": {
-                "noUnknownAtRules": "off"
+                "noUnknownAtRules": "off",
+                "noEmptyInterface": "off"
+            },
+            "correctness": {
+                "noUnusedImports": {
+                    "level": "warn",
+                    "fix": "safe"
+                },
+                "useExhaustiveDependencies": "off"
+            },
+            "style": {
+                "noNonNullAssertion": "off"
+            },
+            "complexity": {
+                "noBannedTypes": "off"
+            },
+            "nursery": {
+                "useSortedClasses": {
+                    "level": "error",
+                    "fix": "safe"
+                }
             }
         },
         "domains": {
