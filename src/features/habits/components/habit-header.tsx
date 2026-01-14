@@ -1,8 +1,13 @@
+import { HabitHeaderDate } from "./habit-header-date"
+
 interface HabitHeaderProps {
     dates: Date[]
 }
 
 export function HabitHeader({ dates }: HabitHeaderProps) {
+    const today = new Date()
+    today.setHours(0, 0, 0, 0)
+
     return (
         <tr>
             <th className="h-10 w-40 border border-zinc-800 pr-2">
@@ -10,12 +15,7 @@ export function HabitHeader({ dates }: HabitHeaderProps) {
             </th>
 
             {dates.map((date) => (
-                <th
-                    className="h-10 w-10 border border-zinc-800 text-center font-medium"
-                    key={date.toISOString()}
-                >
-                    {date.getDate()}
-                </th>
+                <HabitHeaderDate key={date.toISOString()} date={date} />
             ))}
 
             <th className="h-10 w-40 border border-zinc-800 pr-2">

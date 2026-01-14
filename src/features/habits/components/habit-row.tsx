@@ -9,7 +9,7 @@ interface HabitRowProps {
 export function HabitRow({ habit, dates }: HabitRowProps) {
     return (
         <tr>
-            <td className="h-7 w-40 truncate border border-zinc-800 pr-2 text-center text-xs">
+            <td className="h-7 w-40 truncate border border-zinc-800 pr-2 text-center text-gray-300 text-xs">
                 <div className="w-40 truncate">{habit.name}</div>
             </td>
 

@@ -1,5 +1,6 @@
 export * from "./add-habit-button"
 export * from "./habit-header"
+export * from "./habit-header-date"
 export * from "./habit-item"
 export * from "./habit-row"
 export * from "./habits"

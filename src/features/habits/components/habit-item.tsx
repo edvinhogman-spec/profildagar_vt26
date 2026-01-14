@@ -11,7 +11,6 @@ interface HabitItemProps {
 export function HabitItem({ habit, date }: HabitItemProps) {
     const normalizedDate = new Date(date)
     normalizedDate.setHours(0, 0, 0, 0)
-
     const dateId = normalizedDate.toISOString()
     const isCompleted = habit.completions[dateId] === true
 
@@ -30,7 +29,7 @@ export function HabitItem({ habit, date }: HabitItemProps) {
                     ? habit.color
                     : "var(--color-zinc-900)",
             }}
-            className="h-7 w-10 border-2 border-zinc-800 transition-all duration-300"
+            className="h-7 w-10 border border-zinc-800 transition-all duration-300"
         >
             <button
                 type="button"

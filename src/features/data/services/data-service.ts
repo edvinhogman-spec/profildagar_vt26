@@ -25,7 +25,6 @@ class DataServiceImpl {
 
     public fetch(): DataStruct | undefined {
         if (this.data) return this.data
-
         try {
             const ser = window?.localStorage?.getItem(this.scope)
             const data = ser ? this.deserialize(ser) : undefined

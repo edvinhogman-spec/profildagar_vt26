@@ -1,1 +1,1 @@
-export * from "./create-habit-templates"
+export * from "./generate-habit-color"

@@ -10,21 +10,19 @@ interface HabitsProps {
 
 export function Habits({ habits, dates }: HabitsProps) {
     return (
-        <div className="flex">
-            <table>
-                <tbody>
-                    <HabitHeader dates={dates} />
-                    {habits.map((habit) => (
-                        <HabitRow key={habit.id} habit={habit} dates={dates} />
-                    ))}
+        <table className="w-3xl">
+            <tbody>
+                <HabitHeader dates={dates} />
+                {habits.map((habit) => (
+                    <HabitRow key={habit.id} habit={habit} dates={dates} />
+                ))}
 
-                    <tr>
-                        <td className="pt-2">
-                            <AddHabitButton />
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+                <tr>
+                    <td className="pt-2">
+                        <AddHabitButton />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     )
 }
