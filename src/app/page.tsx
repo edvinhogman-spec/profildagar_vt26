@@ -1,6 +1,6 @@
 //  <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between bg-black px-16 py-32 sm:items-start">
 
-import { HabitTable } from "@/features/habits/components"
+import { Habits } from "@/features/habits/components"
 import { createHabitTemplates } from "@/features/habits/utils"
 import { getWeekDates } from "@/utils/dates"
 
@@ -16,7 +16,7 @@ export default function Home() {
     return (
         <div className="flex min-h-screen items-center justify-center bg-black font-sans">
             <main className="flex min-h-screen w-full max-w-5xl flex-col items-center justify-between px-16 py-32 sm:items-start">
-                <HabitTable habits={habits} dates={dates} />
+                <Habits habits={habits} dates={dates} />
             </main>
         </div>
     )

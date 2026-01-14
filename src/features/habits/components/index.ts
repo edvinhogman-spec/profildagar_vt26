@@ -1,4 +1,3 @@
-export * from "./habit-box"
-export * from "./habit-table"
-export * from "./habit-table-body"
-export * from "./habit-table-header"
+export * from "./habit-header"
+export * from "./habit-row"
+export * from "./habits"

@@ -2,5 +2,5 @@
 
 - NextJS (Ramverk)
 - TailwindCSS (Ramverk)
-- TailwindMerge (Biblotek)
+- TailwindMerge (Bibliotek)
 - Biome (Linter)
