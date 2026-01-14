@@ -1,4 +1,5 @@
 import type { HabitStruct } from "../types"
+import { AddHabitButton } from "./add-habit-button"
 import { HabitHeader } from "./habit-header"
 import { HabitRow } from "./habit-row"
 
@@ -16,6 +17,12 @@ export function Habits({ habits, dates }: HabitsProps) {
                     {habits.map((habit) => (
                         <HabitRow key={habit.id} habit={habit} dates={dates} />
                     ))}
+
+                    <tr>
+                        <td className="pt-2">
+                            <AddHabitButton />
+                        </td>
+                    </tr>
                 </tbody>
             </table>
         </div>

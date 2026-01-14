@@ -1,4 +1,5 @@
 import type { HabitStruct } from "../types"
+import { HabitItem } from "./habit-item"
 
 interface HabitRowProps {
     habit: HabitStruct
@@ -13,11 +14,7 @@ export function HabitRow({ habit, dates }: HabitRowProps) {
             </td>
 
             {dates.map((date) => (
-                <td
-                    className="h-7 w-10 border-2 border-zinc-800"
-                    style={{ backgroundColor: habit.color }}
-                    key={date.toISOString()}
-                ></td>
+                <HabitItem key={date.toISOString()} habit={habit} date={date} />
             ))}
 
             <td className="h-7 w-40 border border-zinc-800 text-center text-gray-400 text-xs">
