@@ -7,11 +7,15 @@ import { HabitHandle } from "./habit-handle"
 class HabitServiceImpl {
     public readonly onUpdate = new Signal()
     private readonly habits: Map<number, HabitHandle> = new Map()
+    private didInit = false
 
     public onInit() {
-        const data = DataService.fetch()!
-        for (const habit of data.habits) {
-            this.habits.set(habit.id, new HabitHandle(habit))
+        if (!this.didInit) {
+            this.didInit = true
+            const data = DataService.fetch()!
+            for (const habit of data.habits) {
+                this.habits.set(habit.id, new HabitHandle(habit))
+            }
         }
     }
 
