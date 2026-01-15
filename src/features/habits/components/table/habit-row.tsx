@@ -1,5 +1,6 @@
-import type { HabitHandle } from "../services"
-import { HabitItem } from "./habit-item"
+import type { HabitHandle } from "../../services"
+import { HabitRowCell } from "./habit-row-cell"
+import { HabitRowLabel } from "./habit-row-label"
 
 interface HabitRowProps {
     habit: HabitHandle
@@ -17,12 +18,10 @@ export function HabitRow({ habit, dates, isLastRow }: HabitRowProps) {
 
     return (
         <tr>
-            <td className="h-7 w-40 truncate border border-zinc-800 px-2 text-center text-gray-400 text-xs">
-                <div className="w-40 truncate">{habit.data.name}</div>
-            </td>
+            <HabitRowLabel habit={habit} />
 
             {dates.map((date) => (
-                <HabitItem
+                <HabitRowCell
                     key={date.toISOString()}
                     habit={habit}
                     date={date}

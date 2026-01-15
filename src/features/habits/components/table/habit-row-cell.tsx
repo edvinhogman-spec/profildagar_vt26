@@ -1,17 +1,16 @@
 "use client"
 
-import { useLocalDate } from "@/hooks"
 import { twCn } from "@/utils/styles"
-import type { HabitHandle } from "../services"
+import type { HabitHandle } from "../../services"
 
-interface HabitItemProps {
+interface HabitRowCellProps {
     habit: HabitHandle
     isLastRow: boolean
     date: Date
 }
 
-export function HabitItem({ habit, date, isLastRow }: HabitItemProps) {
-    const today = useLocalDate()
+export function HabitRowCell({ habit, date, isLastRow }: HabitRowCellProps) {
+    const today = new Date()
 
     const isCompleted = habit.hasCompletion(date)
     const isToday = today.getDate() === date.getDate()
@@ -28,11 +27,11 @@ export function HabitItem({ habit, date, isLastRow }: HabitItemProps) {
         <td
             style={{
                 backgroundColor: isCompleted
-                    ? habit.data.color
+                    ? habit.getColor()
                     : "var(--color-zinc-900)",
             }}
             className={twCn(
-                "h-7 w-10 border border-zinc-800 transition-all duration-300",
+                "h-7 w-10 border border-zinc-800 transition-[background-color,opacity] duration-300",
                 isToday ? "border-x-2! border-x-white" : undefined,
                 isToday && isLastRow ? "border-b-2 border-b-white" : undefined,
             )}

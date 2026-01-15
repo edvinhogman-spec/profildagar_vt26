@@ -1,7 +1,7 @@
 export interface HabitStruct {
     id: number
     name: string
-    color: string
+    colorId: number
     completions: { [date: string]: boolean }
 }
 

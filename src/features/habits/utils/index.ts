@@ -1,1 +1,1 @@
-export * from "./generate-habit-color"
+export * from "./get-habit-color"

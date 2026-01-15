@@ -1,6 +1,5 @@
 "use client"
 
-import { useLocalDate } from "@/hooks"
 import { twCn } from "@/utils/styles"
 
 interface HabitHeaderDateProps {
@@ -8,7 +7,7 @@ interface HabitHeaderDateProps {
 }
 
 export function HabitHeaderDate({ date }: HabitHeaderDateProps) {
-    const today = useLocalDate()
+    const today = new Date()
     const isToday = date.getDate() === today.getDate()
 
     return (

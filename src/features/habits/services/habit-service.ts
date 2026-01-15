@@ -1,12 +1,12 @@
 import { DataService } from "@/features/data/services"
 import { Signal } from "@/utils/async"
 import type { HabitOptions, HabitStruct } from "../types"
-import { generateHabitColor } from "../utils"
+import { getHabitColorId } from "../utils"
 import { HabitHandle } from "./habit-handle"
 
 class HabitServiceImpl {
     public readonly onUpdate = new Signal()
-    private readonly habits: Map<number, HabitHandle> = new Map()
+    public readonly habits: Map<number, HabitHandle> = new Map()
     private didInit = false
 
     public onInit() {
@@ -34,7 +34,7 @@ class HabitServiceImpl {
         const struct: HabitStruct = {
             id: id,
             name: options.name,
-            color: generateHabitColor(id),
+            colorId: getHabitColorId(id),
             completions: {},
         }
         this.update(() => {

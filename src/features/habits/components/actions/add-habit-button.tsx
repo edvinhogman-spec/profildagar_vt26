@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { Button, Modal } from "@/components"
-import { HabitService } from "../services"
+import { HabitService } from "../../services"
 
 export function AddHabitButton(_: {}) {
     const [active, setActive] = useState(false)

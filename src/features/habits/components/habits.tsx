@@ -1,7 +1,7 @@
 import type { HabitHandle } from "../services"
-import { AddHabitButton } from "./add-habit-button"
-import { HabitHeader } from "./habit-header"
-import { HabitRow } from "./habit-row"
+import { AddHabitButton } from "./actions/add-habit-button"
+import { HabitHeader } from "./table/habit-header"
+import { HabitRow } from "./table/habit-row"
 
 interface HabitsProps {
     habits: HabitHandle[]
@@ -23,7 +23,7 @@ export function Habits({ habits, dates }: HabitsProps) {
                 ))}
 
                 <tr>
-                    <td className="pt-2">
+                    <td>
                         <AddHabitButton />
                     </td>
                 </tr>
