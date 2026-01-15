@@ -6,7 +6,6 @@ import { getWeekDates } from "@/utils/dates"
 
 export default function Home() {
     const dates = getWeekDates()
-
     const habits = useHabits()
 
     return (

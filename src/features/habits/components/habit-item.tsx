@@ -1,13 +1,11 @@
 "use client"
 
 import { useLocalDate } from "@/hooks"
-import { normalizeDate } from "@/utils/dates"
 import { twCn } from "@/utils/styles"
-import { HabitService } from "../services"
-import type { HabitStruct } from "../types"
+import type { HabitHandle } from "../services"
 
 interface HabitItemProps {
-    habit: HabitStruct
+    habit: HabitHandle
     isLastRow: boolean
     date: Date
 }
@@ -15,17 +13,14 @@ interface HabitItemProps {
 export function HabitItem({ habit, date, isLastRow }: HabitItemProps) {
     const today = useLocalDate()
 
-    const normalizedDate = normalizeDate(date)
-    const dateId = normalizedDate.toISOString()
-
-    const isCompleted = habit.completions[dateId] === true
+    const isCompleted = habit.hasCompletion(date)
     const isToday = today.getDate() === date.getDate()
 
     const onClick = () => {
         if (isCompleted) {
-            HabitService.removeHabitCompletion(habit.id, date)
+            habit.removeCompletion(date)
         } else {
-            HabitService.addHabitCompletion(habit.id, date)
+            habit.addCompletion(date)
         }
     }
 
@@ -33,7 +28,7 @@ export function HabitItem({ habit, date, isLastRow }: HabitItemProps) {
         <td
             style={{
                 backgroundColor: isCompleted
-                    ? habit.color
+                    ? habit.data.color
                     : "var(--color-zinc-900)",
             }}
             className={twCn(

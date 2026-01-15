@@ -1,28 +1,18 @@
 import { DataService } from "@/features/data/services"
 import { Signal } from "@/utils/async"
-import { normalizeDate } from "@/utils/dates"
 import type { HabitOptions, HabitStruct } from "../types"
 import { generateHabitColor } from "../utils"
+import { HabitHandle } from "./habit-handle"
 
 class HabitServiceImpl {
-    public readonly onHabitUpdated = new Signal()
-    private readonly habits: Map<number, HabitStruct> = new Map()
+    public readonly onUpdate = new Signal()
+    private readonly habits: Map<number, HabitHandle> = new Map()
 
-    constructor() {
+    public onInit() {
         const data = DataService.fetch()!
         for (const habit of data.habits) {
-            this.habits.set(habit.id, habit)
+            this.habits.set(habit.id, new HabitHandle(habit))
         }
-    }
-
-    private update(transformer: () => void) {
-        DataService.update((data) => {
-            transformer()
-            const habits = Array.from(this.habits.values())
-            data.habits = habits
-            return data
-        })
-        this.onHabitUpdated.fire()
     }
 
     private getNextHabitId() {
@@ -44,32 +34,19 @@ class HabitServiceImpl {
             completions: {},
         }
         this.update(() => {
-            this.habits.set(id, struct)
+            this.habits.set(id, new HabitHandle(struct))
         })
+        return this.habits.get(id)
     }
 
-    public addHabitCompletion(habitId: number, date: Date) {
-        const habit = this.habits.get(habitId)
-        if (!habit) return
-
-        const normalizedDate = normalizeDate(date)
-        const dateId = normalizedDate.toISOString()
-
-        this.update(() => {
-            habit.completions[dateId] = true
+    public update(transformer: () => void) {
+        DataService.update((data) => {
+            transformer()
+            const habits = Array.from(this.habits.values().map((v) => v.data))
+            data.habits = habits
+            return data
         })
-    }
-
-    public removeHabitCompletion(habitId: number, date: Date) {
-        const habit = this.habits.get(habitId)
-        if (!habit) return
-
-        const normalizedDate = normalizeDate(date)
-        const dateId = normalizedDate.toISOString()
-
-        this.update(() => {
-            delete habit.completions[dateId]
-        })
+        this.onUpdate.fire()
     }
 }
 

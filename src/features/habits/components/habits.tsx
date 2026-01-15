@@ -1,10 +1,10 @@
-import type { HabitStruct } from "../types"
+import type { HabitHandle } from "../services"
 import { AddHabitButton } from "./add-habit-button"
 import { HabitHeader } from "./habit-header"
 import { HabitRow } from "./habit-row"
 
 interface HabitsProps {
-    habits: HabitStruct[]
+    habits: HabitHandle[]
     dates: Date[]
 }
 
@@ -15,7 +15,7 @@ export function Habits({ habits, dates }: HabitsProps) {
                 <HabitHeader dates={dates} />
                 {habits.map((habit, i) => (
                     <HabitRow
-                        key={habit.id}
+                        key={habit.data.id}
                         habit={habit}
                         dates={dates}
                         isLastRow={i === habits.length - 1}
