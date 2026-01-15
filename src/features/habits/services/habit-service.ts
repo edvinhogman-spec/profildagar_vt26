@@ -1,7 +1,6 @@
 import { DataService } from "@/features/data/services"
 import { Signal } from "@/utils/async"
 import type { HabitOptions, HabitStruct } from "../types"
-import { getHabitColorId } from "../utils"
 import { HabitHandle } from "./habit-handle"
 
 class HabitServiceImpl {
@@ -34,7 +33,6 @@ class HabitServiceImpl {
         const struct: HabitStruct = {
             id: id,
             name: options.name,
-            colorId: getHabitColorId(id),
             completions: {},
         }
         this.update(() => {

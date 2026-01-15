@@ -9,8 +9,8 @@ export default function Home() {
     const habits = useHabits()
 
     return (
-        <div className="flex min-h-screen items-center justify-center bg-black font-sans">
-            <main className="flex min-h-screen w-full max-w-5xl flex-col items-center justify-between px-16 py-32 sm:items-start">
+        <div className="flex min-h-screen w-full items-center justify-center bg-black p-4 font-sans">
+            <main className="flex w-full max-w-5xl flex-col items-center">
                 <Habits habits={habits} dates={dates} />
             </main>
         </div>

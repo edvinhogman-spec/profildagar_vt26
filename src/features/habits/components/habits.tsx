@@ -10,7 +10,7 @@ interface HabitsProps {
 
 export function Habits({ habits, dates }: HabitsProps) {
     return (
-        <table className="border-collapse">
+        <table className="fixed-table border-collapse">
             <tbody>
                 <HabitHeader dates={dates} />
                 {habits.map((habit, i) => (

@@ -19,7 +19,7 @@ export function HabitHeader({ dates }: HabitHeaderProps) {
             ))}
 
             <th className="h-10 w-40 border border-zinc-800 pr-2">
-                <p className="text-center">Achieved</p>
+                <p className="px-2 text-center">Achieved</p>
             </th>
         </tr>
     )

@@ -37,7 +37,7 @@ export function Modal({
                 <p className="mb-3 text-gray-200 text-sm">{description}</p>
 
                 <textarea
-                    className="mb-4 w-80 resize-none border border-zinc-800 p-2 text-gray-300 text-sm focus:outline-none [&::-webkit-scrollbar]:hidden"
+                    className="mb-4 w-xs resize-none border border-zinc-800 p-2 text-gray-300 text-sm focus:outline-none lg:w-sm [&::-webkit-scrollbar]:hidden"
                     rows={3}
                     draggable={false}
                     value={value}

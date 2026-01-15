@@ -1,5 +1,6 @@
 "use client"
 
+import { getDateCharacter } from "@/utils/dates"
 import { twCn } from "@/utils/styles"
 
 interface HabitHeaderDateProps {
@@ -19,7 +20,8 @@ export function HabitHeaderDate({ date }: HabitHeaderDateProps) {
                     : "border border-zinc-800 font-normal",
             )}
         >
-            {date.getDate()}
+            <div className="text-xs">{getDateCharacter(date)}</div>
+            <div className="text-sm md:text-md">{date.getDate()}</div>
         </th>
     )
 }

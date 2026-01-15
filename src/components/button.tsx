@@ -2,7 +2,7 @@ import type React from "react"
 import { twCn } from "@/utils/styles"
 
 interface ButtonProps extends Omit<React.HTMLProps<HTMLButtonElement>, "type"> {
-    variant?: "primary" | "secondary" | "danger"
+    variant?: "primary" | "danger"
 }
 
 const styles = {
@@ -17,7 +17,6 @@ const styles = {
 
     variants: {
         primary: twCn("hover:bg-green-700 active:bg-green-600 bg-zinc-700"),
-        secondary: twCn("bg-zinc-700"),
         danger: twCn(
             "bg-red-600 border hover:bg-red-500 active:bg-red-400 border-red-500",
         ),

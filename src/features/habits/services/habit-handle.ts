@@ -1,6 +1,6 @@
 import { normalizeDate } from "@/utils/dates"
 import type { HabitStruct } from "../types"
-import { getHabitColorValue } from "../utils"
+import { getHabitColorId, getHabitColorValue } from "../utils"
 import { HabitService } from "./habit-service"
 
 export class HabitHandle {
@@ -34,6 +34,6 @@ export class HabitHandle {
     }
 
     public getColor() {
-        return getHabitColorValue(this.data.colorId)
+        return getHabitColorValue(getHabitColorId(this.data.id))
     }
 }
