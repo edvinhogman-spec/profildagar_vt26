@@ -14,6 +14,12 @@ export class HabitHandle {
         })
     }
 
+    public rename(name: string) {
+        HabitService.update(() => {
+            this.data.name = name
+        })
+    }
+
     public addCompletion(date: Date) {
         HabitService.update(() => {
             const dateId = normalizeDate(date).toISOString()

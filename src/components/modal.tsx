@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { createPortal } from "react-dom"
 import { Button } from "./button"
 
 interface ModalProps {
@@ -22,9 +23,9 @@ export function Modal({
         onSubmit(value)
     }
 
-    return (
+    const body = (
         <div className="fixed inset-0 flex items-center justify-center bg-black/60">
-            <div className="relative flex flex-col border border-zinc-800 bg-zinc-950 p-3">
+            <div className="relative flex flex-col border border-zinc-800 bg-zinc-950 p-3 text-left">
                 <Button
                     variant="danger"
                     className="absolute right-3 aspect-square w-6 p-0 font-bold text-xs"
@@ -50,4 +51,6 @@ export function Modal({
             </div>
         </div>
     )
+
+    return createPortal(body, document.body)
 }

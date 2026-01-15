@@ -1,6 +1,7 @@
 import { twCn } from "@/utils/styles"
 import type { HabitHandle } from "../../services"
 import { DeleteHabitButton } from "../actions/delete-habit-button"
+import { RenameHabitButton } from "../actions/rename-habit-button"
 
 interface HabitRowLabelProps {
     habit: HabitHandle
@@ -13,18 +14,21 @@ export function HabitRowLabel({ habit }: HabitRowLabelProps) {
 
     return (
         <td className="group relative h-7 w-40 border border-zinc-800 text-center">
-            <div
-                className={`${overlay} opacity-100 group-hover:pointer-events-none group-hover:opacity-0`}
-            >
-                <p className="w-full truncate text-gray-400 text-xs">
-                    {habit.data.name}
-                </p>
-            </div>
+            <div>
+                <div
+                    className={`${overlay} opacity-100 group-hover:pointer-events-none group-hover:opacity-0`}
+                >
+                    <p className="w-full truncate text-gray-400 text-xs">
+                        {habit.data.name}
+                    </p>
+                </div>
 
-            <div
-                className={`${overlay} pointer-events-none opacity-0 group-hover:pointer-events-auto group-hover:opacity-100`}
-            >
-                <DeleteHabitButton habit={habit} />
+                <div
+                    className={`${overlay} pointer-events-none gap-2 opacity-0 group-hover:pointer-events-auto group-hover:opacity-100`}
+                >
+                    <DeleteHabitButton habit={habit} />
+                    <RenameHabitButton habit={habit} />
+                </div>
             </div>
         </td>
     )
