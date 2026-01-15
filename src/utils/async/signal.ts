@@ -4,6 +4,7 @@ export class Signal<T extends unknown[]> {
     private readonly listeners: Listener<T>[] = []
 
     public fire(...args: T) {
+        console.log(this.listeners)
         for (const listener of this.listeners) {
             void (async () => {
                 try {

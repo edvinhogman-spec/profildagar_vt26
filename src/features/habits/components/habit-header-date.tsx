@@ -14,10 +14,10 @@ export function HabitHeaderDate({ date }: HabitHeaderDateProps) {
     return (
         <th
             className={twCn(
-                "relative h-10 w-10 text-center font-medium",
+                "relative h-10 w-10 text-center text-gray-400",
                 isToday
-                    ? "border-2 border-green-400 text-green-300"
-                    : "border border-zinc-800",
+                    ? "border-white border-x-2 border-t-2 font-medium text-white"
+                    : "border border-zinc-800 font-normal",
             )}
         >
             {date.getDate()}

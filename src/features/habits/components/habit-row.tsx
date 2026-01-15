@@ -3,18 +3,24 @@ import { HabitItem } from "./habit-item"
 
 interface HabitRowProps {
     habit: HabitStruct
+    isLastRow: boolean
     dates: Date[]
 }
 
-export function HabitRow({ habit, dates }: HabitRowProps) {
+export function HabitRow({ habit, dates, isLastRow }: HabitRowProps) {
     return (
         <tr>
-            <td className="h-7 w-40 truncate border border-zinc-800 pr-2 text-center text-gray-300 text-xs">
+            <td className="h-7 w-40 truncate border border-zinc-800 px-2 text-center text-gray-400 text-xs">
                 <div className="w-40 truncate">{habit.name}</div>
             </td>
 
             {dates.map((date) => (
-                <HabitItem key={date.toISOString()} habit={habit} date={date} />
+                <HabitItem
+                    key={date.toISOString()}
+                    habit={habit}
+                    date={date}
+                    isLastRow={isLastRow}
+                />
             ))}
 
             <td className="h-7 w-40 border border-zinc-800 text-center text-gray-400 text-xs">

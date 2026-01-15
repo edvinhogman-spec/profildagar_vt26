@@ -1,5 +1,6 @@
 import { DataService } from "@/features/data/services"
 import { Signal } from "@/utils/async"
+import { normalizeDate } from "@/utils/dates"
 import type { HabitOptions, HabitStruct } from "../types"
 import { generateHabitColor } from "../utils"
 
@@ -51,11 +52,10 @@ class HabitServiceImpl {
         const habit = this.habits.get(habitId)
         if (!habit) return
 
-        const normalizedDate = new Date(date)
-        normalizedDate.setHours(0, 0, 0, 0)
+        const normalizedDate = normalizeDate(date)
+        const dateId = normalizedDate.toISOString()
 
         this.update(() => {
-            const dateId = normalizedDate.toISOString()
             habit.completions[dateId] = true
         })
     }
@@ -64,11 +64,10 @@ class HabitServiceImpl {
         const habit = this.habits.get(habitId)
         if (!habit) return
 
-        const normalizedDate = new Date(date)
-        normalizedDate.setHours(0, 0, 0, 0)
+        const normalizedDate = normalizeDate(date)
+        const dateId = normalizedDate.toISOString()
 
         this.update(() => {
-            const dateId = normalizedDate.toISOString()
             delete habit.completions[dateId]
         })
     }

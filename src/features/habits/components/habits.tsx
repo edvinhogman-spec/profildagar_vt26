@@ -10,11 +10,16 @@ interface HabitsProps {
 
 export function Habits({ habits, dates }: HabitsProps) {
     return (
-        <table className="w-3xl">
+        <table className="border-collapse">
             <tbody>
                 <HabitHeader dates={dates} />
-                {habits.map((habit) => (
-                    <HabitRow key={habit.id} habit={habit} dates={dates} />
+                {habits.map((habit, i) => (
+                    <HabitRow
+                        key={habit.id}
+                        habit={habit}
+                        dates={dates}
+                        isLastRow={i === habits.length - 1}
+                    />
                 ))}
 
                 <tr>

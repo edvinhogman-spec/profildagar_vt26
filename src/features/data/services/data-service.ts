@@ -1,3 +1,4 @@
+import { IS_SERVER } from "@/constants"
 import type { DataStruct } from "../types"
 
 // jag hade använt en databas om jag hade tid
@@ -24,7 +25,8 @@ class DataServiceImpl {
     }
 
     public fetch(): DataStruct | undefined {
-        if (this.data) return this.data
+        if (this.data || IS_SERVER) return this.data
+
         try {
             const ser = window?.localStorage?.getItem(this.scope)
             const data = ser ? this.deserialize(ser) : undefined
