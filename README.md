@@ -1,4 +1,4 @@
-https://i.imgur.com/TsqpquN.png
+![Bild](/public/photo.jpg)
 
 # Habit Tracker
 
