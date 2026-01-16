@@ -12,7 +12,7 @@ Bästa helhetslösning, Bästa användarupplevelse (UX/UI)
 - Projektbeskrivning
     * Vi har skapat en interaktiv webbsida som hjälper användaren att enkelt visualisera, hantera och behålla sina dagsrutiner. Via en kalender kan användaren enkelt skapa, redigera och markera sina vanor med hjälp av tydlig färgkodning, layout och markeringar.
 - Tekniskbeskrivning
-    * Nya vanor kan enkelt via ett gränssnitt där användaren klickar på en knapp och sedan anger namnet i en modal pop-up.
+    * Nya vanor kan enkelt skapas via ett gränssnitt där användaren klickar på en knapp och sedan anger namnet i en modal pop-up.
     * Vanor kan redigeras via en meny som dyker upp när användaren håller musen äver den respektiva vanans rad i tabellen.
     * Den största tekniska utmaningen har varit att stiligt rendera vanorna och hålla det responsivt. Vi klarade av det genom många olika försök. Det som fungerade var att använda en tabell och behandla alla data som celler.
 
