@@ -12,16 +12,16 @@ export function HabitHeader({ dates }: HabitHeaderProps) {
 
     return (
         <tr>
-            <th className="h-10 w-40 border border-zinc-800 pr-2">
-                <p className="text-center">Habits</p>
+            <th className="h-fit w-25 border border-zinc-800 px-2 md:w-50">
+                <p className="text-center text-sm">Habits</p>
             </th>
 
             {dates.map((date) => (
                 <HabitHeaderDate key={date.toISOString()} date={date} />
             ))}
 
-            <th className="h-10 w-40 border border-zinc-800 pr-2">
-                <p className="px-2 text-center">Achieved</p>
+            <th className="h-fit w-25 border border-zinc-800 px-2 md:w-50">
+                <p className="text-center text-sm">Done</p>
             </th>
         </tr>
     )

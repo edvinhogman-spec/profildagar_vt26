@@ -38,7 +38,7 @@ export function HabitRow({ habit, dates, isLastRow }: HabitRowProps) {
 
             <td
                 className={twCn(
-                    "h-7 w-40 border border-zinc-800 text-center text-gray-400 text-xs",
+                    "h-fit w-fit border border-zinc-800 text-center text-gray-400 text-xs",
                     isCurrentWeek && totalCompletedDays >= totalPassedDays
                         ? "text-green-400"
                         : undefined,

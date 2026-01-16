@@ -19,7 +19,7 @@ export function Habits(_: HabitsProps) {
     }
 
     return (
-        <div className="flex flex-col gap-3">
+        <div className="flex flex-col gap-5">
             <HabitCalendar onClick={onCalendarClicked} dates={dates} />
             <HabitTable habits={habits} dates={dates} />
         </div>

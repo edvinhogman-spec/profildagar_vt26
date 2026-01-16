@@ -32,7 +32,7 @@ export function HabitRowCell({ habit, date, isLastRow }: HabitRowCellProps) {
                     : "var(--color-zinc-900)",
             }}
             className={twCn(
-                "h-7 w-10 border border-zinc-800 transition-[background-color,opacity] duration-300",
+                "h-7 w-5 border border-zinc-800 transition-[background-color,opacity] duration-300",
                 isToday ? "border-x-2! border-x-white" : undefined,
                 isToday && isLastRow ? "border-b-2 border-b-white" : undefined,
             )}

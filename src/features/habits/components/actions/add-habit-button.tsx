@@ -20,7 +20,11 @@ export function AddHabitButton(_: {}) {
 
     return (
         <div>
-            <Button variant="primary" className="h-10 w-44" onClick={onToggle}>
+            <Button
+                variant="primary"
+                className="h-full w-full text-xs sm:text-sm"
+                onClick={onToggle}
+            >
                 + New Habit
             </Button>
 

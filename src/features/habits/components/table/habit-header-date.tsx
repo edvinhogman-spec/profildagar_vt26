@@ -14,14 +14,14 @@ export function HabitHeaderDate({ date }: HabitHeaderDateProps) {
     return (
         <th
             className={twCn(
-                "relative h-10 w-10 text-center text-gray-400",
+                "relative h-fit w-fit text-center text-gray-400 md:w-10",
                 isToday
                     ? "border-white border-x-2 border-t-2 font-medium text-white"
                     : "border border-zinc-800 font-normal",
             )}
         >
             <div className="text-xs">{getDateDayCharacter(date)}</div>
-            <div className="text-sm md:text-md">{date.getDate()}</div>
+            <div className="text-xs md:text-sm">{date.getDate()}</div>
         </th>
     )
 }

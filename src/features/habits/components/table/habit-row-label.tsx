@@ -13,12 +13,12 @@ export function HabitRowLabel({ habit }: HabitRowLabelProps) {
     )
 
     return (
-        <td className="group relative h-7 w-40 border border-zinc-800 text-center">
+        <td className="group relative h-7 w-25 border border-zinc-800 text-center">
             <div>
                 <div
                     className={`${overlay} opacity-100 group-hover:pointer-events-none group-hover:opacity-0`}
                 >
-                    <p className="w-full truncate text-gray-400 text-xs">
+                    <p className="w-fit truncate text-gray-400 text-xs">
                         {habit.data.name}
                     </p>
                 </div>
