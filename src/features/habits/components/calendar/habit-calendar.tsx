@@ -13,7 +13,7 @@ export function HabitCalendar({ onClick, dates }: HabitCalendarProps) {
     const dateStr = `${getDateMonthString(monday)}, ${monday.getFullYear()}`
 
     return (
-        <div className="flex items-center justify-center gap-3">
+        <div className="flex items-center justify-center gap-3 pl-2">
             <Button className="aspect-square w-10" onClick={() => onClick(-1)}>
                 {"<"}
             </Button>
