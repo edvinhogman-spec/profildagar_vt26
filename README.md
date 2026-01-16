@@ -1,3 +1,5 @@
+https://i.imgur.com/TsqpquN.png
+
 # Habit Tracker
 
 Edvin Högman, Omed Ghousy
@@ -14,6 +16,8 @@ T.ex. om ni har fokuserat på just UI/UX så är det mer relevant än om ni
 Det ska även ingå en tekniskt beskrivning, där ni beskriver en eller flera tekniska lösningar i projektet. Ni skall beskriva funktionen av den tekniska lösningen och hur den används i projektet. Ju tydligare beskrivning desto enklare att bedöma den tekniska lösningen. Beskrivningen skall vara förståelig även för personer som inte kan programmera.
 
 ### Externt producerade komponenter
+- Google Icons
+    * Alla ikoner i projektet är skapade av Google. De är gratis för vem som helst att använda. Ingen licens krävs. Vi använde deras ikoner för att de se bättre ut än vad vi någonsin kunde göra.
 
 - NextJS
     * Next.js är projektets grund och fungerar som det ramverk som håller samman hela webbsidan. Vi valde Next.js framför vanlig React främst på grund av en bättre dx. Genom inbyggt routing och snabb set-up kunde vi påbörja projektet på direkten. Ramverket är ett måste för projektet då det hanterar både rendering och routing.
