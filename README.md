@@ -16,15 +16,21 @@ Det ska även ingå en tekniskt beskrivning, där ni beskriver en eller flera te
 ### Externt producerade komponenter
 
 - NextJS
-    * Vi valde att använda next.js eftersom det går snabbt att starta ett projekt och för att det har flera dx förbättringar jämfört med vanilla react. Det är nextjs som är skelettet till vårat projekt.
+    * Next.js är projektets grund och fungerar som det ramverk som håller samman hela webbsidan. Vi valde Next.js framför vanlig React främst på grund av en bättre dx. Genom inbyggt routing och snabb set-up kunde vi påbörja projektet på direkten. Ramverket är ett måste för projektet då det hanterar både rendering och routing.
+
 - TailwindCSS
-    * Anledningen att vi använde tailwind istället för standard css är för att det är förbyggt med massa användbara klasser. Man får också auto-complete på allt man skriver och slipper flytta mellan css och tsx filer så ofta. Utan tailwind hade projektet inte blivit klart lika snabbt.
+    * För styling har vi använt TailwindCSS. Det är ett verktyg som använder sig av inbygga utility klasser. Istället för att skriva traditionell CSS direkt i separata filer, använder vi TailwindCSS för att styla webbsidan direkt i våra tsx filer. Detta hjälpte oss bli mycket mer effektiva. Dessutom har den en inbyggd auto-complete vilket hjälper oss skriva snabbare. Tailwind har hjälpt oss bli klara med projektet inom 24 timmar.
+
 - TailwindMerge
-    * Ett bibliotek som tar in flera tailwind klasser och ger tillbaka en kombinerad sträng. Detta är användbart för dynamiska saker som beror på data eller varianter.
+    * Ett bibliotek som tar in flera tailwind klasser och ger tillbaka en kombinerad sträng. TailwindMerge är nödvändigt för dynamiska saker som beror på data eller varianter.
+
 - Biome
-    * Är en linter och formatter som hjälper att skriva bättre kod. Den behövs inte för att köra programmet, men den hjälper till att få saker gjorda snabbare.
+    * Är en linter och formatter som hjälper att skriva bättre kod. Den behövs inte för att köra webbsidan, men den hjälper till att utveckla den snabbare.
 
 ### Install
-- Systemkrav: node.js måste vara installerat. 
-- Installation: `npm i` i terminalen i samma mapp som webbsidan.
-- Körning: `npm run dev` i terminalen i samma mapp som webbsidan.
+- Systemkrav
+    * Node.js måste vara installerat. 
+- Installation
+    * Kör `npm i` i terminalen i samma mapp som webbsidan.
+- Körning
+    * Kör `npm run dev` i terminalen i samma mapp som webbsidan.
