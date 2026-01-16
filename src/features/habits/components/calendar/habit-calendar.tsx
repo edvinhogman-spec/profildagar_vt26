@@ -14,13 +14,19 @@ export function HabitCalendar({ onClick, dates }: HabitCalendarProps) {
 
     return (
         <div className="flex items-center justify-center gap-3">
-            <Button className="aspect-square w-10" onClick={() => onClick(-1)}>
+            <Button
+                className="aspect-square w-10 bg-background"
+                onClick={() => onClick(-1)}
+            >
                 {"<"}
             </Button>
 
             <p className="w-30 text-center">{dateStr}</p>
 
-            <Button className="aspect-square w-10" onClick={() => onClick(1)}>
+            <Button
+                className="aspect-square w-10 bg-background"
+                onClick={() => onClick(1)}
+            >
                 {">"}
             </Button>
         </div>

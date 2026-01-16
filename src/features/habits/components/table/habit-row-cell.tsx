@@ -27,12 +27,10 @@ export function HabitRowCell({ habit, date, isLastRow }: HabitRowCellProps) {
     return (
         <td
             style={{
-                backgroundColor: isCompleted
-                    ? habit.getColor()
-                    : "var(--color-zinc-900)",
+                backgroundColor: isCompleted ? habit.getColor() : undefined,
             }}
             className={twCn(
-                "h-7 w-5 border border-zinc-800 transition-[background-color,opacity] duration-300",
+                "h-7 w-5 border border-zinc-800 bg-zinc-900 transition-[background-color,opacity] duration-300",
                 isToday ? "border-x-2! border-x-white" : undefined,
                 isToday && isLastRow ? "border-b-2 border-b-white" : undefined,
             )}
