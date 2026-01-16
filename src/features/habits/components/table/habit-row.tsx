@@ -21,6 +21,8 @@ export function HabitRow({ habit, dates, isLastRow }: HabitRowProps) {
     const totalPassedDays = passedDays.length
     const totalDays = dates.length
 
+    const isCurrentWeek = today > dates[0]
+
     return (
         <tr>
             <HabitRowLabel habit={habit} />
@@ -37,7 +39,7 @@ export function HabitRow({ habit, dates, isLastRow }: HabitRowProps) {
             <td
                 className={twCn(
                     "h-7 w-40 border border-zinc-800 text-center text-gray-400 text-xs",
-                    totalCompletedDays >= totalPassedDays
+                    isCurrentWeek && totalCompletedDays >= totalPassedDays
                         ? "text-green-400"
                         : undefined,
                 )}

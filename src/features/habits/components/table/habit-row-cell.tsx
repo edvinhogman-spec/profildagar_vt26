@@ -1,5 +1,6 @@
 "use client"
 
+import { isSameDate } from "@/utils/dates"
 import { twCn } from "@/utils/styles"
 import type { HabitHandle } from "../../services"
 
@@ -13,7 +14,7 @@ export function HabitRowCell({ habit, date, isLastRow }: HabitRowCellProps) {
     const today = new Date()
 
     const isCompleted = habit.hasCompletion(date)
-    const isToday = today.getDate() === date.getDate()
+    const isToday = isSameDate(today, date)
 
     const onClick = () => {
         if (isCompleted) {

@@ -1,3 +1,5 @@
-export * from "./get-date-character"
+export * from "./get-date-day-character"
+export * from "./get-date-month-string"
 export * from "./get-week-dates"
+export * from "./is-same-date"
 export * from "./normalize-date"

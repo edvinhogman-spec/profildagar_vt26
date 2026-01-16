@@ -1,6 +1,7 @@
 export * from "./actions/add-habit-button"
 export * from "./actions/delete-habit-button"
 export * from "./actions/rename-habit-button"
+export * from "./calendar/habit-calendar"
 export * from "./habits"
 export * from "./table/habit-header"
 export * from "./table/habit-header-date"

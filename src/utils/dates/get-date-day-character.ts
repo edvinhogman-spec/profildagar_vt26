@@ -1,4 +1,4 @@
-export function getDateCharacter(date: Date) {
+export function getDateDayCharacter(date: Date) {
     switch (date.getDay()) {
         case 1:
             return "M"

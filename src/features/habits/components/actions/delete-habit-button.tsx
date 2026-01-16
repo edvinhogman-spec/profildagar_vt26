@@ -1,3 +1,5 @@
+"use client"
+
 import { Icon } from "@/components"
 import type { HabitHandle } from "../../services"
 

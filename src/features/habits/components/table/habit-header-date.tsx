@@ -1,6 +1,6 @@
 "use client"
 
-import { getDateCharacter } from "@/utils/dates"
+import { getDateDayCharacter, isSameDate } from "@/utils/dates"
 import { twCn } from "@/utils/styles"
 
 interface HabitHeaderDateProps {
@@ -9,7 +9,7 @@ interface HabitHeaderDateProps {
 
 export function HabitHeaderDate({ date }: HabitHeaderDateProps) {
     const today = new Date()
-    const isToday = date.getDate() === today.getDate()
+    const isToday = isSameDate(today, date)
 
     return (
         <th
@@ -20,7 +20,7 @@ export function HabitHeaderDate({ date }: HabitHeaderDateProps) {
                     : "border border-zinc-800 font-normal",
             )}
         >
-            <div className="text-xs">{getDateCharacter(date)}</div>
+            <div className="text-xs">{getDateDayCharacter(date)}</div>
             <div className="text-sm md:text-md">{date.getDate()}</div>
         </th>
     )

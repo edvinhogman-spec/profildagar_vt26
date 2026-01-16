@@ -1,33 +1,27 @@
-import type { HabitHandle } from "../services"
-import { AddHabitButton } from "./actions/add-habit-button"
-import { HabitHeader } from "./table/habit-header"
-import { HabitRow } from "./table/habit-row"
+"use client"
 
-interface HabitsProps {
-    habits: HabitHandle[]
-    dates: Date[]
-}
+import { useState } from "react"
+import { getWeekDates } from "@/utils/dates"
+import { useHabits } from "../hooks"
+import { HabitCalendar } from "./calendar/habit-calendar"
+import { HabitTable } from "./table/habit-table"
 
-export function Habits({ habits, dates }: HabitsProps) {
+interface HabitsProps {}
+
+export function Habits(_: HabitsProps) {
+    const [dates, setDates] = useState(getWeekDates())
+    const habits = useHabits()
+
+    const onCalendarClicked = (direction: number) => {
+        const nextMonday = new Date(dates[0])
+        nextMonday.setDate(nextMonday.getDate() + 7 * direction)
+        setDates(getWeekDates(nextMonday))
+    }
+
     return (
-        <table className="fixed-table border-collapse">
-            <tbody>
-                <HabitHeader dates={dates} />
-                {habits.map((habit, i) => (
-                    <HabitRow
-                        key={habit.data.id}
-                        habit={habit}
-                        dates={dates}
-                        isLastRow={i === habits.length - 1}
-                    />
-                ))}
-
-                <tr>
-                    <td>
-                        <AddHabitButton />
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+        <div className="flex flex-col gap-3">
+            <HabitCalendar onClick={onCalendarClicked} dates={dates} />
+            <HabitTable habits={habits} dates={dates} />
+        </div>
     )
 }

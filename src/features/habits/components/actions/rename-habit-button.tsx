@@ -1,3 +1,5 @@
+"use client"
+
 import { useState } from "react"
 import { Icon, Modal } from "@/components"
 import type { HabitHandle } from "../../services"
