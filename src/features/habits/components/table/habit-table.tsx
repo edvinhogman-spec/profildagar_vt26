@@ -13,6 +13,7 @@ export function HabitTable({ dates, habits }: HabitTableProps) {
         <table className="fixed-table border-collapse">
             <tbody>
                 <HabitHeader dates={dates} />
+
                 {habits.map((habit, i) => (
                     <HabitRow
                         key={habit.data.id}

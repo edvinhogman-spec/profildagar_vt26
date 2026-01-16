@@ -1,3 +1,5 @@
+"use client"
+
 import { HabitHeaderDate } from "./habit-header-date"
 
 interface HabitHeaderProps {
