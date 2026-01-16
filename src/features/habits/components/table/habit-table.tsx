@@ -10,7 +10,7 @@ interface HabitTableProps {
 
 export function HabitTable({ dates, habits }: HabitTableProps) {
     return (
-        <table className="fixed-table border-collapse">
+        <table className="fixed-table border-collapse bg-zinc-950">
             <tbody>
                 <HabitHeader dates={dates} />
 

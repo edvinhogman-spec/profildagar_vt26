@@ -5,6 +5,7 @@ import { HabitHandle } from "./habit-handle"
 
 class HabitServiceImpl {
     public readonly onUpdate = new Signal()
+    public readonly onLoaded = new Signal()
     public readonly habits: Map<number, HabitHandle> = new Map()
     private didInit = false
 
@@ -15,6 +16,7 @@ class HabitServiceImpl {
             for (const habit of data.habits) {
                 this.habits.set(habit.id, new HabitHandle(habit))
             }
+            this.onLoaded.fire()
         }
     }
 
@@ -22,6 +24,10 @@ class HabitServiceImpl {
         const maxId = Math.max(0, ...Array.from(this.habits.keys()))
         const nextId = maxId + 1
         return nextId
+    }
+
+    public isLoaded() {
+        return this.didInit
     }
 
     public getHabits() {

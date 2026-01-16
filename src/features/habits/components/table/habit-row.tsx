@@ -24,7 +24,7 @@ export function HabitRow({ habit, dates, isLastRow }: HabitRowProps) {
     const isCurrentWeek = today > dates[0]
 
     return (
-        <tr className="bg-zinc-950">
+        <tr>
             <HabitRowLabel habit={habit} />
 
             {dates.map((date) => (
