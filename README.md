@@ -14,6 +14,7 @@ Bästa helhetslösning, Bästa användarupplevelse (UX/UI)
 - Tekniskbeskrivning
     * Nya vanor kan enkelt skapas via ett gränssnitt där användaren klickar på en knapp och sedan anger namnet i en modal pop-up.
     * Vanor kan redigeras via en meny som dyker upp när användaren håller musen äver den respektiva vanans rad i tabellen.
+    * Dagens datum markeras med en vit linje för att på ett tydligt och rent sätt visa användaren vart den ska markera utan att behöva leta reda på datumet i tabellen.
     * Den största tekniska utmaningen har varit att stiligt rendera vanorna och hålla det responsivt. Vi klarade av det genom många olika försök. Det som fungerade var att använda en tabell och behandla alla data som celler.
 
 ### Externt producerade komponenter
